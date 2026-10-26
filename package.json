@@ -1,10 +1,10 @@
 {
-  "name": "phpcrud-ai-cli",
+  "name": "craft-pi",
   "version": "1.0.0",
-  "description": "Zero-install Gemini AI assistant for PHP CRUD projects",
+  "description": "Zero-install Gemini AI assistant CLI tool for PHP CRUD projects",
   "type": "module",
   "bin": {
-    "phpcrud-ai": "./bin/cli.js"
+    "craft-pi": "./bin/cli.js"
   },
   "dependencies": {
     "@google/genai": "^2.31.0"
