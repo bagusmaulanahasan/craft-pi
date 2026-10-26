@@ -1,0 +1,4 @@
+node_modules/
+.phpcrud-ai/
+output-baru-nih/
+.env

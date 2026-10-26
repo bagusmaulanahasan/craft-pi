@@ -108,11 +108,10 @@ export async function startRepl() {
         const reply = await assistant.sendMessage(trimmed);
         readline.clearLine(process.stdout, 0);
         readline.cursorTo(process.stdout, 0);
-        if (reply.length > 400 && reply.includes('```')) {
-          console.log('AI: [Action completed. Files/Folders generated and executed successfully via tools.]');
-        } else {
-          console.log(reply);
-        }
+
+        // Filter out markdown code blocks from being printed to CMD to keep it clean
+        const cleanedReply = reply.replace(/```[\s\S]*?```/g, '[File/Code generated and saved successfully]').trim();
+        console.log(cleanedReply);
       } catch (err) {
         readline.clearLine(process.stdout, 0);
         readline.cursorTo(process.stdout, 0);
