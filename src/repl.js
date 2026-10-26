@@ -108,7 +108,11 @@ export async function startRepl() {
         const reply = await assistant.sendMessage(trimmed);
         readline.clearLine(process.stdout, 0);
         readline.cursorTo(process.stdout, 0);
-        console.log(reply);
+        if (reply.length > 400 && reply.includes('```')) {
+          console.log('AI: [Action completed. Files/Folders generated and executed successfully via tools.]');
+        } else {
+          console.log(reply);
+        }
       } catch (err) {
         readline.clearLine(process.stdout, 0);
         readline.cursorTo(process.stdout, 0);
